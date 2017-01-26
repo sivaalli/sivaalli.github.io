@@ -1,0 +1,22 @@
+body{
+	overflow-y:scroll;
+}
+
+img{
+	height: 25px;
+}
+
+.header{
+	width: 50%;
+	margin: auto;
+}
+.search{
+	width: 30%;
+}
+.shadow{
+	box-shadow: 1px 0px 37px -8px rgba(0,0,0,0.51);
+}
+
+ul{
+	text-align: center;
+}
