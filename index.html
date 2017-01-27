@@ -32,8 +32,6 @@
  	
 </ul>
 
-
- 
 <br/>
 
 <div ng-show="main.page==1" class="header">
@@ -50,12 +48,12 @@
 	
 </div>
 
-<div ng-show="main.page==3" class="header" ng-controller="NewsCtrl as newsCtrl">
-	 <div class="form-group search">
-   		<input type="text" class="form-control" placeholder="Search" ng-model="newsCtrl.search">
+<div ng-show="main.page==3" class="header" ng-controller="NewsCtrl as newsCtrl" ng-init="newsCtrl.updateNews()">
+	 <div class="form-group">
+   		<input type="text" class="form-control search" placeholder="Search News" ng-model="newsCtrl.search">
   	</div>
-  	        
-	<div class="list-group">
+  	<button ng-click="newsCtrl.updateNews()">Refresh News</button>
+	<div class="list-group" >
 		<div class="shadow" ng-repeat="news in newsCtrl.newsList | orderBy:'-updated_date' |filter:newsCtrl.search">
    		 	<news-object each-news="news"></news-object>
 		</div>

@@ -4,6 +4,7 @@ var app = angular.module("newsapp",[]);
 
 //service to get news by calling NT Times REST API
 app.service("newsService",['$http','$log',function($http,$log){
+	
 	this.getNews = function(){
 		return $http.get('https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=7989608dd4ab48bc8718120bb5d565f7');
 	};
@@ -41,10 +42,12 @@ app.controller('NewsCtrl',['$scope','$log','$interval','newsService',function($s
 	var currentRef = this;
 	this.search="";
 	this.newsList=[];
-	newsService.getNews().then(function(response){
-		console.log(response);
+	this.updateNews = function(){
+		console.log("news updated");
+		newsService.getNews().then(function(response){
 		currentRef.newsList = response.data.results;
 	});
+	};	
 	//uncomment this to call API every 5 mins
 	/*$interval(function(){
 		$log.log("called api again");
@@ -57,4 +60,4 @@ app.controller('NewsCtrl',['$scope','$log','$interval','newsService',function($s
 
 app.controller('MainCtrl', ['$scope', function($scope){
 	this.page=1;
-}])
+}]);
