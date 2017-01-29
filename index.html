@@ -53,6 +53,7 @@
    		<input type="text" class="form-control search" placeholder="Search News" ng-model="newsCtrl.search">
   	</div>
   	<button ng-click="newsCtrl.updateNews()" type="button">Update news</button>
+	<span style="float: right;">News by The New York Times</span>
 	<div class="list-group" >
 		<div class="shadow" ng-repeat="news in newsCtrl.newsList | orderBy:'-updated_date' |filter:newsCtrl.search">
    		 	<news-object each-news="news"></news-object>
