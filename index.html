@@ -1,65 +1,93 @@
-<!DOCTYPE html>
-<html  ng-app="newsapp">
-<head>
-	<title>Home</title>
-	<script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="script.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">	
-</head>
-<body ng-controller="MainCtrl as main">
+    <!DOCTYPE html>
+    <html  ng-app="newsapp">
+    <head>
+    	<title>Home</title>
+    	<script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    	<script src="script.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<link rel="stylesheet" type="text/css" href="styles.css">	
+    </head>
+    <body ng-controller="MainCtrl as main">
 
-<ul class="nav nav-tabs header">
-<!-- class active can be used -->
-	  <li role="presentation" ng-class="{active: main.page==1}"><a ng-click="main.page=1" href="#">About me</a></	li>
-  		<li role="presentation" ng-class="{active: main.page==2}"><a ng-click="main.page=2" href="#">Resume</a></li>
- 	 <li role="presentation" ng-class="{active: main.page==3}"><a ng-click="main.page=3" href="#">News</a></li>
- 	 <li style="float: right;">
- 	 		<a href="https://www.linkedin.com/in/sivaalli" target="_blank">
- 	 		<img src="thumbnails/linkedin.png">
- 	 	</a>
- 	 </li>
- 	 <li style="float: right;">
- 	 	<a href="https://github.com/sivaalli" target="_blank">
- 	 		<img src="thumbnails/github.png">
- 	 	</a>
- 	 </li>
- 	  <li style="float: right;">
- 	 	<a href="mailto:sivapraneethalli@gmail.com?Subject=Hello" target="_blank">
- 	 		<img src="thumbnails/mail.png">
- 	 	</a>
- 	 </li>
- 	
-</ul>
+      <ul class="nav nav-tabs header">
+        <!-- class active can be used -->
+        <li role="presentation" ng-class="{active: main.page==1}"><a ng-click="main.page=1" href="#">About me</a></	li>
+          <li role="presentation" ng-class="{active: main.page==2}"><a ng-click="main.page=2" href="#">Resume</a></li>
+          <li role="presentation" ng-class="{active: main.page==3}"><a ng-click="main.page=3" href="#">News</a></li>
+          <li style="float: right;">
+           <a href="https://www.linkedin.com/in/sivaalli" target="_blank">
+             <img src="thumbnails/linkedin.png">
+           </a>
+         </li>
+         <li style="float: right;">
+          <a href="https://github.com/sivaalli" target="_blank">
+           <img src="thumbnails/github.png">
+         </a>
+       </li>
+       <li style="float: right;">
+        <a href="mailto:sivapraneethalli@gmail.com?Subject=Hello" target="_blank">
+         <img src="thumbnails/mail.png">
+       </a>
+     </li>
 
-<br/>
+    </ul>
 
-<div ng-show="main.page==1" class="header">
-<br/>
-	<p>I am Siva praneeth Alli, a software engineer, graduated from <a  class="underLineLink" href="http://www.shsu.edu/" target="_blank">Sam Houston State University</a>. I love Coding, travelling and photography. In free time I solve Algorithm and Data structure problems in <a class="underLineLink" href="https://www.careercup.com/" target="_blank">Career Cup</a> , <a class="underLineLink" href="http://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a>. Check out my <a class="underLineLink" href="https://www.careercup.com/user?id=5662747183284224" target="_blank"> answers</a> for intresting interview questions at carrecup
-		.Feel free to check my <a class="underLineLink" href="https://500px.com/siva_alli" target="_blank"> 500px gallery</a>.</p>
-		<p>You can reach me out at <a href="mailto:sivapraneethalli@gmail.com?Subject=Hello" target="_blank">sivapraneethalli@gmail.com
- 	 	</a></p>
-</div>
+    <br/>
 
-<div ng-show="main.page==2" class="header" >
-<br/>
-	<p>Click <a href="resume.pdf" download="siva_resume">here</a> to download my resume.</p>
-	
-</div>
+    <div ng-show="main.page==1" class="header">
+      <br/>
+      <p>I am Siva praneeth Alli, a software engineer, graduated from <a  class="underLineLink" href="http://www.shsu.edu/" target="_blank">Sam Houston State University</a>. I love Coding, travelling and photography. In free time I solve Algorithm and Data structure problems in <a class="underLineLink" href="https://www.careercup.com/" target="_blank">Career Cup</a> , <a class="underLineLink" href="http://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a>. Check out my <a class="underLineLink" href="https://www.careercup.com/user?id=5662747183284224" target="_blank"> answers</a> for intresting interview questions at carrecup
+        .Feel free to check my <a class="underLineLink" href="https://500px.com/siva_alli" target="_blank"> 500px gallery</a>.</p>
+        <p>You can reach me out at <a href="mailto:sivapraneethalli@gmail.com?Subject=Hello" target="_blank">sivapraneethalli@gmail.com
+        </a></p>
+      </div>
 
-<div ng-show="main.page==3" class="header" ng-controller="NewsCtrl as newsCtrl" ng-init="newsCtrl.updateNews()">
-	 <div class="form-group">
-   		<input type="text" class="form-control search" placeholder="Search News" ng-model="newsCtrl.search">
-  	</div>
-  	<button ng-click="newsCtrl.updateNews()" type="button">Update news</button>
-	<span style="float: right;">News by The New York Times</span>
-	<div class="list-group" >
-		<div class="shadow" ng-repeat="news in newsCtrl.newsList | orderBy:'-updated_date' |filter:newsCtrl.search">
-   		 	<news-object each-news="news"></news-object>
-		</div>
-	</div>
-</div>
- 
-</body>
-</html>
+      <div ng-show="main.page==2" class="header" >
+        <br/>
+        <p>Click <a href="resume.pdf" download="siva_resume">here</a> to download my resume.</p>
+      </div>
+
+      <div ng-show="main.page==3" class="header" ng-controller="NewsCtrl as newsCtrl" ng-init="newsCtrl.updateNews()">
+       <!-- show search input on news -->
+       <div class="form-group">
+         <input type="text" class="form-control search" placeholder="Search News" ng-model="newsCtrl.search.$">
+       </div>
+
+       <!-- show update news button -->
+       <button ng-click="newsCtrl.updateNews()" type="button" class="btn btn-primary">Update news</button>
+       <!-- <button ng-click="newsCtrl.updateNews()" type="button">Update news</button> -->
+
+       <!--Dropdown for selecting news -->
+       <div style="float: right;">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{newsCtrl.search.section=='' && 'All' || newsCtrl.search.section}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+              <a ng-click="newsCtrl.search.section=''" href="#">All</a>
+            </li>
+            <li ng-repeat="currentSection in newsCtrl.sectionList" ng-click="newsCtrl.search.section=currentSection">
+              <a href="#">{{currentSection}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <!-- News list -->
+      <div class="list-group" >
+        <div class="shadow" ng-repeat="news in newsCtrl.newsList | orderBy:'-updated_date' |filter:newsCtrl.search">
+         <news-object each-news="news"></news-object>
+       </div>
+     </div>
+    </div>
+
+    </body>
+    </html>

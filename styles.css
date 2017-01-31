@@ -20,3 +20,7 @@ img{
 ul{
 	text-align: center;
 }
+
+.relativePosition{
+	position: relative;
+}
