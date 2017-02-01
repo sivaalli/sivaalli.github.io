@@ -53,6 +53,7 @@
 
 			//load news sections to sectionList array
 			var i;
+			self.sectionList = [];
 			for(i=0;i<response.data.results.length;i++){
 				var currentSection = response.data.results[i].section;
 				if(self.sectionList.indexOf(currentSection)==-1){
