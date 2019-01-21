@@ -6,7 +6,7 @@
 	app.service("newsService",['$http','$log',function($http,$log){
 		
 		this.getNews = function(){
-			return $http.get('https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=7989608dd4ab48bc8718120bb5d565f7');
+			return $http.get('https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=avKvpjxnGn2JR7UDJ6hOraqkXfLeCrNg');
 		};
 	}]);
 
